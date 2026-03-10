@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИИ-Навигатор: Звуковая Экосистема</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Top Toolbar -->
+        <header class="transport-bar">
+            <div class="logo">
+                <span class="icon-waves"></span> ИИ-Навигатор 2024-2026
+            </div>
+            <div class="dashboard-controls">
+                <div class="global-status">
+                    <span class="status-dot blinking"></span> Sync
+                </div>
+                <div class="timecode">00:00:00:00</div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- Left Sidebar (Filters) -->
+            <aside class="sidebar">
+                <h2 class="sidebar-title">Экосистема (Категории)</h2>
+                <nav class="category-filters">
+                    <button class="filter-btn active" data-filter="all">
+                        <span class="icon"></span> Все системы
+                    </button>
+                    <button class="filter-btn" data-filter="generation">
+                        <span class="indicator color-gen"></span> Генерация аудио
+                    </button>
+                    <button class="filter-btn" data-filter="arrangement">
+                        <span class="indicator color-arr"></span> Аранжировка & MIDI
+                    </button>
+                    <button class="filter-btn" data-filter="vocal">
+                        <span class="indicator color-voc"></span> Вокальный синтез
+                    </button>
+                    <button class="filter-btn" data-filter="restoration">
+                        <span class="indicator color-res"></span> Реставрация & Стэмы
+                    </button>
+                </nav>
+            </aside>
+
+            <!-- Main Workspace (Ecosystem Map) -->
+            <main class="workspace">
+                <div class="map-container" id="ecosystem-map">
+                    <!-- Cards will be dynamically injected by JS -->
+                </div>
+            </main>
+
+            <!-- Right Inspector (Details) -->
+            <aside class="inspector">
+                <h2 class="inspector-title">Описание</h2>
+                <div id="inspector-content" class="inspector-content placeholder">
+                    <p>Выберите инструмент на карте для просмотра деталей и характеристик.</p>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Bottom Panel (Audio Spectrum / Status) -->
+        <footer class="bottom-panel">
+            <div class="spectrum-visualizer" id="spectrum">
+                <!-- Bars injected by JS or CSS -->
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

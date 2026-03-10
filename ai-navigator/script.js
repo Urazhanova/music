@@ -223,6 +223,11 @@ function renderMap(filter = 'all') {
             document.querySelectorAll('.tool-card').forEach(c => c.classList.remove('selected'));
             card.classList.add('selected');
             renderInspector(tool);
+
+            // On mobile devices, scroll down to the inspector
+            if (window.innerWidth <= 900) {
+                document.querySelector('.inspector').scrollIntoView({ behavior: 'smooth' });
+            }
         });
 
         ecosystemMap.appendChild(card);

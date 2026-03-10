@@ -506,3 +506,88 @@ h3 {
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.2);
 }
+
+/* Responsive Design / Mobile */
+@media (max-width: 900px) {
+    body {
+        height: auto;
+        overflow: visible;
+    }
+
+    .app-container {
+        height: 100%;
+        min-height: 100vh;
+    }
+
+    .main-layout {
+        flex-direction: column;
+        overflow-y: visible;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-shrink: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--panel-border);
+        padding: 15px 20px;
+        height: auto;
+    }
+
+    .category-filters {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .filter-btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .workspace {
+        flex: none;
+        width: 100%;
+        height: auto;
+        overflow-y: visible;
+        padding: 20px;
+    }
+
+    .inspector {
+        flex: none;
+        width: 100%;
+        height: auto;
+        border-left: none;
+        border-top: 1px solid var(--panel-border);
+        padding: 30px 20px;
+        overflow-y: visible;
+    }
+
+    /* Top bar adjustments */
+    .transport-bar {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 1rem;
+        gap: 8px;
+    }
+
+    .dashboard-controls {
+        gap: 12px;
+    }
+
+    .timecode {
+        font-size: 0.85rem;
+        padding: 4px 8px;
+    }
+
+    .global-status {
+        display: none;
+        /* Hide sync text on very small screens to save space */
+    }
+
+    .bottom-panel {
+        display: none;
+        /* Hide spectrum on mobile optionally, or just leave it out */
+    }
+}

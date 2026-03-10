@@ -224,9 +224,10 @@ function renderMap(filter = 'all') {
             card.classList.add('selected');
             renderInspector(tool);
 
-            // On mobile devices, scroll down to the inspector
+            // On mobile devices, open the inspector as a modal
             if (window.innerWidth <= 900) {
-                document.querySelector('.inspector').scrollIntoView({ behavior: 'smooth' });
+                document.querySelector('.inspector').classList.add('mobile-active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
             }
         });
 
@@ -249,6 +250,7 @@ function renderInspector(tool) {
     inspectorContent.classList.remove('placeholder');
     inspectorContent.innerHTML = `
         <div class="ins-header">
+            <button class="close-modal-btn" onclick="closeMobileInspector()">×</button>
             <div class="ins-cat" style="color: ${color}">${tool.categoryLabel}</div>
             <div class="ins-name">${tool.name}</div>
         </div>

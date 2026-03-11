@@ -226,8 +226,9 @@ function renderMap(filter = 'all') {
 
             // On mobile devices, open the inspector as a modal
             if (window.innerWidth <= 900) {
-                document.querySelector('.inspector').classList.add('mobile-active');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                const inspectorEl = document.querySelector('.inspector');
+                inspectorEl.classList.add('mobile-active');
+                inspectorEl.scrollTop = 0; // Reset scroll position to top
             }
         });
 
@@ -337,7 +338,6 @@ setInterval(() => {
 // Helper to close mobile inspector
 window.closeMobileInspector = function () {
     document.querySelector('.inspector').classList.remove('mobile-active');
-    document.body.style.overflow = ''; // Restore background scrolling
 
     // Remove selection from the card map
     document.querySelectorAll('.tool-card').forEach(c => c.classList.remove('selected'));

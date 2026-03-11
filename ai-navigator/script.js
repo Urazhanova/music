@@ -333,3 +333,12 @@ setInterval(() => {
 
     timecodeEl.textContent = `00:${fm}:${fs}:${fms}`;
 }, 10);
+
+// Helper to close mobile inspector
+window.closeMobileInspector = function () {
+    document.querySelector('.inspector').classList.remove('mobile-active');
+    document.body.style.overflow = ''; // Restore background scrolling
+
+    // Remove selection from the card map
+    document.querySelectorAll('.tool-card').forEach(c => c.classList.remove('selected'));
+};

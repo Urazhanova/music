@@ -228,7 +228,12 @@ function renderMap(filter = 'all') {
             if (window.innerWidth <= 900) {
                 const inspectorEl = document.querySelector('.inspector');
                 inspectorEl.classList.add('mobile-active');
-                inspectorEl.scrollTop = 0; // Reset scroll position to top
+
+                // Use a short timeout to let the browser render the new innerHTML first,
+                // otherwise it might preserve the relative scroll ratio of the previous content.
+                setTimeout(() => {
+                    inspectorEl.scrollTop = 0;
+                }, 10);
             }
         });
 

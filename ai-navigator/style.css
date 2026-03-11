@@ -586,8 +586,10 @@ h3 {
         position: fixed;
         top: 0;
         left: 0;
+        right: 0;
+        bottom: 0;
         width: 100%;
-        height: 100%;
+        height: auto;
         background: rgba(10, 12, 18, 0.98);
         /* Less transparent to prevent bleed-through */
         backdrop-filter: blur(20px);
@@ -600,6 +602,9 @@ h3 {
         /* Reduced top padding */
         overflow-y: auto;
         /* Enable vertical scroll */
+        overflow-x: hidden;
+        overscroll-behavior-y: contain;
+        /* Prevent scrolling the body underneath */
         -webkit-overflow-scrolling: touch;
         /* Smooth scrolling on iOS */
         transform: translateY(100%);

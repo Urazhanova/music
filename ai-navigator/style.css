@@ -546,6 +546,9 @@ h3 {
     .app-container {
         height: 100%;
         min-height: 100vh;
+        backdrop-filter: none;
+        /* Crucial: backdrop-filter traps position:fixed to the container instead of viewport */
+        -webkit-backdrop-filter: none;
     }
 
     .main-layout {
